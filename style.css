@@ -1,0 +1,113 @@
+body {
+    background-color: hsl(0, 0%, 93%);
+    color: hsl(0, 0%, 7%);
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.leftright-container {
+    display: flex;
+    align-items: center;
+}
+
+.square {
+    margin: 0 50px;
+    border-radius: 5px;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+
+.square:active,
+.active {
+    filter: brightness(150%);
+}
+
+.red {
+    background-color: hsl(0, 80%, 50%);
+}
+
+.blue {
+    background-color: hsl(210, 85%, 50%);
+}
+
+.green {
+    background-color: hsl(120, 85%, 50%);
+}
+
+.yellow {
+    background-color: hsl(50, 85%, 50%);
+}
+
+#startButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    background: hsl(350, 100%, 50%);
+    color: hsl(0, 0%, 93%);
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.winner {
+    animation: spin 1s ease-in-out;
+}
+
+@keyframes spin { 
+    100% { transform:rotate(180deg) } 
+}
+
+/* ------ GAME OVER ------- */
+#signStart, #signOver {
+    display: none;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+    z-index: 9999;
+    padding-top: 50px;
+}
+
+#signStart {
+    display: block;
+    font-size: 2em;
+}
+
+#signStart p {
+    font-size: 22px;
+}
+
+.animation {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    animation: grow 1s ease-in-out forwards;
+}
+
+@keyframes grow {
+    0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    }
+    80% {
+    transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    }
+}    
