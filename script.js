@@ -44,15 +44,18 @@ class Simon {
         this.showSequence();
     }
 
+    hideSignOver() {
+        setTimeout(() => {
+            this.display.signOver.style.display = 'none';
+        }, 1250);
+    }
+
     // Actualiza el nivel
     updateLevel(value) {
         this.level = value;
         this.display.signOver.textContent = `Level ${this.level}`;
         this.display.signOver.style.display = 'block';
-        clearInterval(this.levelInterval);
-        this.levelInterval = setInterval(() => {
-            this.display.signOver.style.display = 'none';
-        }, 1000);
+        this.hideSignOver();
     }
 
    // Crea toda la secuencia del juego
