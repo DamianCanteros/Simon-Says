@@ -37,10 +37,11 @@ button {
 .square {
     margin: 0 50px;
     border-radius: 5px;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     transform: rotate(45deg);
+    box-shadow: 7px 7px 0px 3px hsl(0, 0%, 13%), -5px -5px 15px 3px rgba(255, 255, 255, 0.2);
 }
 
 .square:active,
@@ -83,7 +84,7 @@ button {
 #signStart, #signOver {
     display: none;
     text-align: center;
-    font-size: 4em;
+    font-size: 48pt;
     font-weight: bold;
     z-index: 9999;
     padding-top: 50px;
