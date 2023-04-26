@@ -1,11 +1,23 @@
 body {
     background-color: hsl(0, 0%, 100%);
     color: hsl(0, 0%, 7%);
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px 21px;
+  border-radius:5px;
+  border: none;
+  background-color: hsl(172, 100%, 93%);
+  box-shadow: 0px 7px 0px 3px hsl(0, 0%, 13%), -5px -5px 15px 3px rgba(255, 255, 255, 0.2);
 }
 
 .buttonContainer {
@@ -73,11 +85,11 @@ body {
     100% { transform:rotate(180deg) } 
 }
 
-/* ------ GAME OVER ------- */
+/* ------ SIGN GAME START AND OVER ------- */
 #signStart, #signOver {
     display: none;
     text-align: center;
-    font-size: 4em;
+    font-size: 2em;
     font-weight: bold;
     z-index: 9999;
     padding-top: 50px;
@@ -85,12 +97,25 @@ body {
 
 #signStart {
     display: block;
-    font-size: 2em;
 }
 
-#signStart p {
+#signStart p, #signOver p{
     font-size: 22px;
-}
+    opacity: 0; /* el elemento está oculto por defecto */
+    animation: aparecer-desaparecer 1s infinite; /* la animación dura 1 segundo y se repite infinitamente */
+  }
+  
+  @keyframes aparecer-desaparecer {
+    0% {
+      opacity: 0; /* el elemento está completamente oculto al principio */
+    }
+    50% {
+      opacity: 1; /* el elemento aparece a la mitad de la animación */
+    }
+    100% {
+      opacity: 0; /* el elemento desaparece al final de la animación */
+    }
+  }
 
 .animation {
     position: fixed;
